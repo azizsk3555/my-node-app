@@ -11,28 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js (LTS 20)
       - name: Setup Node.js (LTS)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run ESLint for code quality
       - name: Run ESLint
         run: npm run lint
 
-      # Step 5: Run unit tests
       - name: Run tests
         run: npm test
-
-      # Step 6: Run the app
-      - name: Run app
-        run: npm start
